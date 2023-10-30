@@ -8,7 +8,7 @@ print(f"Good day {my_name}! {current_day} is a perfect day to learn some python.
 print("\n")
 my_name_task2 = "Danylo"
 my_surname_task2 = "Baskov"
-print(my_name_task2 + my_surname_task2)
+print(my_name_task2 + " " + my_surname_task2)
 
 #task3
 print("\n")
