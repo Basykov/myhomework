@@ -1,7 +1,6 @@
 # task 1 Make a directory with 2 modules; make a function in one of them;
 # then import this function in the other module and use that in your script of choice.
 
-# second module is homework8.1.py
 
 import homework8imp
 
