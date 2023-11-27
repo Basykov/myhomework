@@ -13,6 +13,22 @@ import json
 
 print("\n")
 
+def usin(b,c) :
+    jjst = input("What state?\n")
+    jjn = input("Name?\n")
+    jjs = input("Surname?\n")
+    jjp = input("Phone?\n")
+    if jjst in c:
+        jjj = [jjn,jjs,jjp]
+        jb = c[jjst]
+        jb.append(jjj)
+        c[jjst] = jb 
+    if jjst not in c:
+        jjjj = [[jjn,jjs,jjp]]
+        c[jjst] = jjjj
+    with open(b, "w") as ttf:
+        json.dump(c,ttf, indent=4)
+
 while True:
         
         b = input("What do you want to do?(F)ind or (C)ange or (E)nd session\n")
@@ -20,7 +36,7 @@ while True:
         if b.upper() == "F":
              
              ff = input("Who?(enter person info or state)\n")
-             with open("homework10t2.json", "r") as ggf:
+             with open("homework10\homework10t2.json", "r") as ggf:
                  gg = json.load(ggf)
                  if ff in gg.keys():
                       print(gg[ff])
@@ -39,26 +55,13 @@ while True:
 
              jja = {}
 
-             with open("homework10t2.json", "r") as ddf:
+             with open("homework10\homework10t2.json", "r") as ddf:
                 dd = json.load(ddf)
                 for i in dd:
                      jja[i] = dd[i]
 
              if jj.upper() == "A":
-                jjst = input("What state?\n")
-                jjn = input("Name?\n")
-                jjs = input("Surname?\n")
-                jjp = input("Phone?\n")
-                if jjst in jja:
-                    jjj = [jjn,jjs,jjp]
-                    jb = jja[jjst]
-                    jb.append(jjj)
-                    jja[jjst] = jb 
-                if jjst not in jja:
-                    jjjj = [[jjn,jjs,jjp]]
-                    jja[jjst] = jjjj
-                with open("homework10t2.json", "w") as ttf:
-                        json.dump(jja,ttf, indent=4)
+                usin("homework10\homework10t2.json", jja)
 
              if jj.upper() == "D":
                 jjd = input("Who do you wish to delete? Enter Name and surname(Example: Rosa Park)\n")
@@ -69,7 +72,7 @@ while True:
                              i.remove(b)
                              print("Phone deleted.")
 
-                with open("homework10t2.json", "w") as ttf:
+                with open("homework10\homework10t2.json", "w") as ttf:
                     json.dump(jja,ttf, indent=4)
                        
              if jj.upper() == "C":
@@ -81,22 +84,8 @@ while True:
                         if jjv == hh:
                              i.remove(b)
                              print("Old info deleted. Now enter new one")
-                             jjst = input("What state?\n")
-                             jjn = input("Name?\n")
-                             jjs = input("Surname?\n")
-                             jjp = input("Phone?\n")
-                             if jjst in jja:
-                                jjj = [jjn,jjs,jjp]
-                                jb = jja[jjst]
-                                jb.append(jjj)
-                                jja[jjst] = jb 
-                             if jjst not in jja:
-                                jjjj = [[jjn,jjs,jjp]]
-                                jja[jjst] = jjjj
+                             usin("homework10\homework10t2.json", jja)
                              found = True
-                             with open("homework10t2.json", "w") as ttf:
-                                 json.dump(jja,ttf, indent=4)
-                             break
                         if found == True:
                             break
                              
