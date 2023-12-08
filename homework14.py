@@ -160,3 +160,15 @@ print(s.get_product_info("Football T-Shirt"))
 
 
 
+# Task 4
+
+class CustomException(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+        with open('logs.txt', 'a+') as file:
+            file.write(f'Error: {self.msg}\n')
+
+
+
+raise CustomException("Woops?")
+
