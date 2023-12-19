@@ -3,7 +3,7 @@
 #  Make another method called talk() which makes prints a greeting from the person containing, for example like this:
 #   "Hello, my name is Carl Johnson and I’m 26 years old".
 
-print("\n")
+
 
 class Person():
     def __init__(self, firstname, lastname, age):
@@ -13,19 +13,20 @@ class Person():
     def talk(self):
         print (f"Hello, my name is {self.firstname} {self.lastname} and I’m {self.age} years old")
 
-gg = Person("Jhon", "Rebell", 23)
+if __name__ == '__main__':
+    gg = Person("Jhon", "Rebell", 23)
 
-print(gg.firstname)
-print(gg.lastname)
-print(gg.age)
-gg.talk()
+    print(gg.firstname)
+    print(gg.lastname)
+    print(gg.age)
+    gg.talk()
 
 
 # Create a class Dog with class attribute 'age_factor' equals to 7.
 #  Make __init__() which takes values for a dog’s age.
 # Then create a method `human_age` which returns the dog’s age in human equivalent.
 
-print("\n")
+
 
 class Dog():
     age_factor = 7
@@ -34,9 +35,11 @@ class Dog():
     def human_age(self):
         b = self.age * self.age_factor
         return b
+    
+if __name__ == '__main__':
 
-Bobby = Dog(3)
-print(Bobby.human_age())
+    Bobby = Dog(3)
+    print(Bobby.human_age())
 
 
 # Create a simple prototype of a TV controller in Python. It’ll use the following commands:
@@ -50,7 +53,7 @@ print(Bobby.human_age())
 #     exists(N/'name') - gets 1 argument - the number N or the string 'name' and returns "Yes",
 #     if the channel N or 'name' exists in the list, or "No" - in the other case.
 
-print("\n")
+
 
 class TVController():
     def __init__(self, channels):
@@ -83,37 +86,38 @@ class TVController():
         return f"You are watching {self.channels[self.current_channel_index]}"
     def exists(self,name):
         if name in self.channels:
-            print ("Yes")
+            return ("Yes")
         elif type(name) == int  and name <= len(self.channels):
-            print ("Yes")
+            return ("Yes")
         else:
-            print("no")
+            return("no")
 
-    
-CHANNELS = ["BBC", "Discovery", "TV1000"]
+if __name__ == '__main__':
+        
+    CHANNELS = ["BBC", "Discovery", "TV1000"]
 
-controller = TVController(CHANNELS)
-print(controller.channels)
+    controller = TVController(CHANNELS)
+    print(controller.channels)
 
-print(controller.current_channel())
+    print(controller.current_channel())
 
-controller.last_channel()
-print(controller.current_channel())
+    controller.last_channel()
+    print(controller.current_channel())
 
-controller.turn_channel(2)
-print(controller.current_channel())
+    controller.turn_channel(2)
+    print(controller.current_channel())
 
-controller.next_channel()
-print(controller.current_channel())
+    controller.next_channel()
+    print(controller.current_channel())
 
-controller.previous_channel()
-print(controller.current_channel())
+    controller.previous_channel()
+    print(controller.current_channel())
 
-controller.exists("BBC")
-controller.exists("Discovery")
-controller.exists("TV1000")
-controller.exists(1)
-controller.exists(2)
-controller.exists(3)
-controller.exists("sdaaw")
-controller.exists(4)
+    print(controller.exists("BBC"))
+    print(controller.exists("Discovery"))
+    print(controller.exists("TV1000"))
+    print(controller.exists(1))
+    print(controller.exists(2))
+    print(controller.exists(3))
+    print(controller.exists("sdaaw"))
+    print(controller.exists(4))
