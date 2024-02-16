@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+
+
+<html>
+    <head>
+        <title>Second page</title>
+        <link rel="stylesheet" href="{% static 'second_page.css' %}">
+        {% load django_bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+
+<body>
+
+    
+  <button type="button" class="btn btn-primary btn-lg">
+    <a href="{% url 'main_page' %}" class="txtin_button">Main page</a>
+  </button>
+
+    <header class="container text-center mt-5 custom-color4">
+        <h1 class="display-4">Header</h1>
+    </header>
+
+    <div class="container text-center">
+        <div class="row">
+          <div class="col-2 custom-color1" >
+            <p1 class="display-4">Column</p>
+          </div>
+          <div class="col custom-color2">
+            <p2 class="display-4">Column</p>
+          </div>
+          <div class="col-2 custom-color1" >
+            <p3 class="display-4">Column</p>
+          </div>
+        </div>
+      </div>
+
+    <footer class="container text-center mt-5 custom-color3">
+        <p4 class="display-4">Footer</p>
+    </footer>
+
+
+</body>
+</html>

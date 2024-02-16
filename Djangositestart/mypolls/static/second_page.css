@@ -1,0 +1,27 @@
+.custom-color1 {
+    background-color: gray;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-color2 {
+    background-color: green;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-color3 {
+    background-color: blue;
+}
+
+.custom-color4 {
+    background-color: teal;
+}
+
+.txtin_button{
+    color: black;
+}

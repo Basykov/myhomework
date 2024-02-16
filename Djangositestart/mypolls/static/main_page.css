@@ -1,0 +1,23 @@
+.button_specs.btn{
+    background-color: gray;
+}
+
+.txtin_button{
+    color: black;
+}
+
+.header_specs{
+    background-color: teal;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_specs{
+    background-color: purple;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
