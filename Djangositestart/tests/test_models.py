@@ -1,5 +1,6 @@
 from django.test import TestCase
-from mypolls.models import Person, Anything, Note
+from mypolls.models import Person, Anything, Note, Category
+import datetime
 
 class Person_TestCase(TestCase):
     def setUp(self):
@@ -30,14 +31,16 @@ class Anything_TestCase(TestCase):
 
 class Note_TestCase(TestCase):
     def setUp(self):
-        Note.objects.create(title = "BBs", text = "GGf", reminders = "", category = "Work" )
-        Note.objects.create(title = "Hhr", text = "Ttv", reminders = "", category = "Work")
+        Category.objects.create(title = "Work")
+        category = Category.objects.get(title = "Work")
+        Note.objects.create(title = "BBs", text = "GGf", reminders = "2024-02-17 13:22", category = category )
+        Note.objects.create(title = "Hhr", text = "Ttv", reminders = "2024-02-17 13:22", category = category)
 
     def test_creation(self):
-        Note_1 = Anything.objects.get(title = "BBs")
-        Note_2 = Anything.objects.get(title = "Hhr")
+        Note_1 = Note.objects.get(title = "BBs")
+        Note_2 = Note.objects.get(title = "Hhr")
         self.assertEqual(Note_1.text ,"GGf")
         self.assertEqual(Note_2.text , "Ttv")
-        self.assertEqual(Note_1.reminders , "")
-        self.assertEqual(Note_2.category , "Work")
+        self.assertEqual(Note_1.reminders.strftime('%Y-%m-%d %H:%M'), "2024-02-17 13:22")
+        self.assertEqual(Note_2.category.title , "Work")
 
