@@ -1,0 +1,6 @@
+question 1 = O(n)
+question 2 = O(1)
+question 3 = O(n*2)
+question 4 = O(n)
+question 5 = O(n*2)
+question 6 = O(log n)
