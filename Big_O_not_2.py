@@ -20,8 +20,8 @@ def reverse_string(input_str):
 
     stack = Stack()
 
-    for char in input_str:
-        stack.push(char)
+    for i in input_str:
+        stack.push(i)
 
     reversed_str = ""
 
