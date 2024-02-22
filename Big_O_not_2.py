@@ -1,14 +1,36 @@
-my_working_stack = ['a','b','c','d','e',"f","g",]
+class Stack:
+    def __init__(self):
+        self.items = []
 
-def restructure_stuck(stuck:list):
-    new_stuck = []
-    for _ in range(len(stuck)):
-        new_stuck.append(stuck.pop())
-    return new_stuck
+    def push(self, item):
+        self.items.append(item)
 
-print(my_working_stack)
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
 
-result = restructure_stuck(my_working_stack)
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
 
-print(result)
-print(my_working_stack)
+    def is_empty(self):
+        return len(self.items) == 0
+
+def reverse_string(input_str):
+
+    stack = Stack()
+
+    for char in input_str:
+        stack.push(char)
+
+    reversed_str = ""
+
+    while not stack.is_empty():
+        reversed_str += stack.pop()
+
+    return reversed_str
+
+if __name__ == "__main__":
+    input_str = input("Enter a your prophesy: ")
+    reversed_str = reverse_string(input_str)
+    print("Reversed sequence:", reversed_str)
